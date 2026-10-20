@@ -245,7 +245,7 @@ class NutritionWidgets {
     if (await HomeWidget.getWidgetData<String>('${prefix}_frames_key') == key && last.existsSync()) return;
     dir.createSync(recursive: true);
     final image = await _load(look.asset);
-    final mask = await _load(look.asset.replaceFirst('.webp', '-mask.webp'));
+    final mask = await _load(look.asset.replaceFirst(RegExp(r'\.(webp|png)$'), '-mask.webp'));
     final texture = look.texture == null ? null : await _load(look.texture!);
     const height = VesselWidgetGeometry.vesselHeight;
     final size = Size(height * image.width / image.height, height);

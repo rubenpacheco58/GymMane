@@ -2326,6 +2326,12 @@ abstract class AppLocalizations {
   /// **'About PeakForm'**
   String get aboutGymmane;
 
+  /// No description provided for @basedOnGymMane.
+  ///
+  /// In en, this message translates to:
+  /// **'Based on GymMane by InlitX'**
+  String get basedOnGymMane;
+
   /// No description provided for @yourProfile.
   ///
   /// In en, this message translates to:

@@ -13,6 +13,7 @@ import '../widgets/body_rulers.dart';
 import '../widgets/entrance.dart';
 import '../widgets/photo_source_sheet.dart';
 import '../widgets/ui_kit.dart';
+import '../widgets/peakform_logo.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -310,8 +311,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               _in(
                 0,
                 Center(
-                  child: Image.asset('assets/img/runner.png',
-                      height: 196, opacity: const AlwaysStoppedAnimation(0.9)),
+                  child: const PeakFormMark(height: 196),
                 ),
               ),
               const SizedBox(height: 26),
@@ -328,8 +328,10 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 2,
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 4),
-                  child: Text('GymMane',
-                      style: AppTheme.f(44, weight: FontWeight.w800, color: gc.text, height: 1)),
+                  child: const Align(
+                    alignment: AlignmentDirectional.centerStart,
+                    child: PeakFormWordmark(width: 260),
+                  ),
                 ),
               ),
               const SizedBox(height: 12),

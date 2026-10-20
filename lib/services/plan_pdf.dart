@@ -42,7 +42,7 @@ Future<void> sharePlanPdf(List<Routine> routines, {bool week = false}) async {
     final bytes = await buildPlanPdf(routines, week: week);
     final dir = await getTemporaryDirectory();
     final name = week ? 'plan' : _slug(fit.routineTitle(routines.first));
-    final file = File('${dir.path}/gymmane-${name.isEmpty ? 'plan' : name}.pdf');
+    final file = File('${dir.path}/peakform-${name.isEmpty ? 'plan' : name}.pdf');
     await file.writeAsBytes(bytes);
     final title = week ? sentenceCase(t.weeklyPlan) : fit.routineTitle(routines.first);
     await SharePlus.instance.share(ShareParams(
@@ -56,7 +56,7 @@ String _slug(String s) =>
     s.toLowerCase().replaceAll(RegExp(r'[^a-z0-9]+'), '-').replaceAll(RegExp(r'^-+|-+$'), '');
 
 Future<Uint8List> buildPlanPdf(List<Routine> routines, {bool week = false, DateTime? now}) async {
-  final runner = await _loadImage('assets/img/runner.png');
+  final runner = await _loadImage('assets/img/peakform_name_dark.png');
   final arts = <String, ExerciseArtData>{};
   for (final r in routines) {
     for (final id in r.exerciseIds) {
@@ -188,9 +188,8 @@ class _PlanDoc {
   }
 
   void _header(List<Routine> routines, {required bool week, required DateTime now}) {
-    final logo = Rect.fromLTWH(_x(_margin, 26), _y, 26, 26);
+    final logo = Rect.fromLTWH(_x(_margin, 160), _y, 160, 26);
     _add((c) => _logo(c, logo));
-    _text('GymMane', _st(14, weight: FontWeight.w900), _margin + 34, _y + 4, 140);
     final who = [if (fit.profile.name.trim().isNotEmpty) fit.profile.name.trim(), t.shortDateYear(now)].join(' · ');
     _text(who, _st(9, color: _faint), _pageW - _margin - 220, _y + 8, 220, align: TextAlign.end);
     _y += 50;
@@ -534,31 +533,19 @@ class _PlanDoc {
     c.restore();
   }
 
+  // PeakForm wordmark, fitted inside [r] and kept at its own aspect ratio.
   void _logo(Canvas c, Rect r) {
-    c.drawRRect(RRect.fromRectAndRadius(r, Radius.circular(r.width * 0.24)), Paint()..color = const Color(0xFF0B0B0B));
     final src = Rect.fromLTWH(0, 0, runner.width.toDouble(), runner.height.toDouble());
-    final h = r.height * 0.72;
-    final w = h * src.width / src.height;
-    final dst = Rect.fromCenter(center: r.center, width: w, height: h);
-    c.saveLayer(dst, Paint());
+    final scale = (r.width / src.width) < (r.height / src.height) ? r.width / src.width : r.height / src.height;
+    final dst = Rect.fromCenter(center: r.center, width: src.width * scale, height: src.height * scale);
     c.drawImageRect(runner, src, dst, Paint()..filterQuality = FilterQuality.high);
-    c.drawRect(
-        dst,
-        Paint()
-          ..blendMode = BlendMode.srcIn
-          ..shader = const LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Color(0xFFEBC1A3), Color(0xFFB98A6E)],
-          ).createShader(dst));
-    c.restore();
   }
 
   void paintPage(Canvas c, int index) {
     c.drawRect(const Rect.fromLTWH(0, 0, _pageW, _pageH), Paint()..color = _paper);
     final src = Rect.fromLTWH(0, 0, runner.width.toDouble(), runner.height.toDouble());
-    const h = 470.0;
-    final w = h * src.width / src.height;
+    const w = 520.0;
+    final h = w * src.height / src.width;
     c.save();
     c.translate(_pageW / 2, _pageH / 2 + 30);
     c.rotate(-0.12);
@@ -579,17 +566,16 @@ class _PlanDoc {
   void _footer(Canvas c, int index) {
     const y = _pageH - 36;
     c.drawRect(const Rect.fromLTWH(_margin, y - 10, _contentW, 0.6), Paint()..color = _line);
-    _logo(c, Rect.fromLTWH(_x(_margin, 12), y - 1, 12, 12));
+    _logo(c, Rect.fromLTWH(_x(_margin, 70), y, 70, 9));
     final brand = TextPainter(
       text: TextSpan(children: [
-        TextSpan(text: 'GymMane', style: _st(8.5, weight: FontWeight.w900)),
-        TextSpan(text: '  ·  ${t.pdfFooter}', style: _st(8, color: _faint)),
+        TextSpan(text: '·  ${t.pdfFooter}', style: _st(8, color: _faint)),
       ]),
       textDirection: _dir,
       maxLines: 1,
       ellipsis: '…',
     )..layout(minWidth: _contentW - 80, maxWidth: _contentW - 80);
-    brand.paint(c, Offset(_x(_margin + 18, _contentW - 80), y));
+    brand.paint(c, Offset(_x(_margin + 76, _contentW - 80), y));
     final page = TextPainter(
       text: TextSpan(text: '${index + 1} / ${pages.length}', style: _st(8.5, weight: FontWeight.w700, color: _faint)),
       textDirection: TextDirection.ltr,
@@ -607,9 +593,9 @@ class _PlanDoc {
   }
 }
 
-const _author = 'InlitX';
-const _app = 'GymMane';
-const _site = 'https://github.com/InlitX/GymMane';
+const _author = 'PeakForm';
+const _app = 'PeakForm';
+const _site = 'https://github.com/rubenpacheco58/GymMane';
 
 String _two(int n) => n.toString().padLeft(2, '0');
 

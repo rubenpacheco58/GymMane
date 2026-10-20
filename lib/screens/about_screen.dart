@@ -9,12 +9,14 @@ import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
 import '../widgets/entrance.dart';
 import '../widgets/ui_kit.dart';
+import '../widgets/peakform_logo.dart';
 
 const _kVersion = '1.5.0';
-const _kAuthor = 'InlitX';
-const _kAuthorUrl = 'https://github.com/InlitX';
-const _kRepoUrl = 'https://github.com/InlitX/GymMane';
-const _kKofiUrl = 'https://ko-fi.com/inlitx';
+const _kAuthor = 'PeakForm';
+const _kAuthorUrl = 'https://peakform.pt';
+const _kRepoUrl = 'https://github.com/rubenpacheco58/GymMane';
+// GPL-3.0 section 7(b): this attribution must stay visible on the About screen.
+const _kUpstreamUrl = 'https://github.com/InlitX/GymMane';
 
 class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key});
@@ -62,6 +64,8 @@ class AboutScreen extends StatelessWidget {
                 style: AppTheme.f(12.5, weight: FontWeight.w500, color: gc.textTertiary, height: 1.6)),
             const SizedBox(height: 20),
             _credits(gc),
+            const SizedBox(height: 16),
+            _upstreamCredit(gc),
           ]),
         ),
       ),
@@ -100,23 +104,13 @@ class AboutScreen extends StatelessWidget {
               decoration: BoxDecoration(color: gc.emberSoft, shape: BoxShape.circle),
             ),
           ),
-          Positioned(
-            right: 6,
-            top: 14,
-            bottom: 14,
-            child: Opacity(
-              opacity: 0.6,
-              child: Image.asset('assets/img/runner.png', fit: BoxFit.fitHeight),
-            ),
-          ),
           Padding(
             padding: const EdgeInsets.all(22),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('GymMane',
-                    style: AppTheme.f(33, weight: FontWeight.w800, color: gc.text, letterSpacing: -0.5)),
+                const PeakFormWordmark(width: 230),
                 const SizedBox(height: 10),
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 11, vertical: 5),
@@ -185,8 +179,7 @@ class AboutScreen extends StatelessWidget {
   Widget _credits(GymColors gc) {
     final rows = <(IconData, String, String, String, Color?)>[
       (PhosphorIconsFill.heart, t.madeWithLoveBy, _kAuthor, _kAuthorUrl, gc.accent),
-      (PhosphorIconsRegular.githubLogo, t.sourceCode, 'InlitX/GymMane', _kRepoUrl, null),
-      (PhosphorIconsRegular.coffee, t.buyCoffee, 'ko-fi.com/inlitx', _kKofiUrl, null),
+      (PhosphorIconsRegular.githubLogo, t.sourceCode, 'rubenpacheco58/GymMane', _kRepoUrl, null),
     ];
     return Container(
       clipBehavior: Clip.antiAlias,
@@ -239,6 +232,19 @@ class AboutScreen extends StatelessWidget {
               ),
             ),
         ],
+      ),
+    );
+  }
+
+  Widget _upstreamCredit(GymColors gc) {
+    return Semantics(
+      link: true,
+      child: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: () => _open(_kUpstreamUrl),
+        child: Text(t.basedOnGymMane,
+            textAlign: TextAlign.center,
+            style: AppTheme.f(11.5, weight: FontWeight.w500, color: gc.textTertiary)),
       ),
     );
   }

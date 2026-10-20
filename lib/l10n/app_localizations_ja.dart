@@ -1245,6 +1245,9 @@ class AppLocalizationsJa extends AppLocalizations {
   String get aboutGymmane => 'PeakFormについて';
 
   @override
+  String get basedOnGymMane => 'Based on GymMane by InlitX';
+
+  @override
   String get yourProfile => 'プロフィール';
 
   @override

@@ -1298,6 +1298,9 @@ class AppLocalizationsNl extends AppLocalizations {
   String get aboutGymmane => 'Over PeakForm';
 
   @override
+  String get basedOnGymMane => 'Based on GymMane by InlitX';
+
+  @override
   String get yourProfile => 'JE PROFIEL';
 
   @override

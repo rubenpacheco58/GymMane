@@ -1300,6 +1300,9 @@ class AppLocalizationsFr extends AppLocalizations {
   String get aboutGymmane => 'À propos de PeakForm';
 
   @override
+  String get basedOnGymMane => 'Based on GymMane by InlitX';
+
+  @override
   String get yourProfile => 'TON PROFIL';
 
   @override

@@ -367,6 +367,7 @@
   "importNothing": "Nada novo para importar",
   "importDone": "{n, plural, =1{{n} sessão importada} other{{n} sessões importadas}}",
   "aboutGymmane": "Sobre a PeakForm",
+  "basedOnGymMane": "Baseado no GymMane por InlitX",
   "yourProfile": "O TEU PERFIL",
   "autofills": "Preenche automaticamente as calculadoras",
   "nameLabel": "NOME",

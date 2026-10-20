@@ -489,8 +489,10 @@ void main() {
     expect(find.text('fila 0'), findsNothing);
   });
 
-  test('el corredor del logo está en los assets', () async {
-    final data = await rootBundle.load('assets/img/runner.png');
-    expect(data.lengthInBytes, greaterThan(0));
+  test('PeakForm logos are in the assets', () async {
+    for (final asset in ['assets/img/peakform_mark.png', 'assets/img/peakform_wordmark_light.png', 'assets/img/peakform_name_dark.png']) {
+      final data = await rootBundle.load(asset);
+      expect(data.lengthInBytes, greaterThan(0));
+    }
   });
 }

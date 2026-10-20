@@ -1341,6 +1341,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get aboutGymmane => 'О PeakForm';
 
   @override
+  String get basedOnGymMane => 'Based on GymMane by InlitX';
+
+  @override
   String get yourProfile => 'ТВОЙ ПРОФИЛЬ';
 
   @override

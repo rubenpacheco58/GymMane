@@ -1258,6 +1258,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get aboutGymmane => 'PeakForm 정보';
 
   @override
+  String get basedOnGymMane => 'Based on GymMane by InlitX';
+
+  @override
   String get yourProfile => '내 프로필';
 
   @override

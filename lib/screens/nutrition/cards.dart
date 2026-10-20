@@ -775,7 +775,7 @@ class _ShakeTile extends StatelessWidget {
         scale: 0.94,
         child: PhotoVessel(
           animate: fit.vesselMotion,
-          asset: 'assets/img/vessel-shake.webp',
+          asset: 'assets/img/vessel-shake.png',
           level: level,
           height: 158,
           top: 0.407,

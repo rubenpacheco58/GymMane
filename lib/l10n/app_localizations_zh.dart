@@ -1230,6 +1230,9 @@ class AppLocalizationsZh extends AppLocalizations {
   String get aboutGymmane => '关于 PeakForm';
 
   @override
+  String get basedOnGymMane => 'Based on GymMane by InlitX';
+
+  @override
   String get yourProfile => '个人资料';
 
   @override

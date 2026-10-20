@@ -801,7 +801,7 @@ class FitState extends FitCore
     final recent = sessions.where((s) => s.date.isAfter(month)).length;
     final records = personalRecords.take(5).toList();
     final lines = <String>[
-      'GymMane · ${activePlace?.name ?? t.placeAll}',
+      'PeakForm · ${activePlace?.name ?? t.placeAll}',
       t.planAboutMe,
       '- ${t.planBody(profile.sex == 'female' ? t.female : t.male, profile.age, heightLabel(profile.heightCm), weightLabel(profile.weightKg))}',
       '- ${t.planDays(weeklyTarget)}',

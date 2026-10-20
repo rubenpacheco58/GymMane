@@ -12,6 +12,7 @@ import 'body_map.dart';
 import 'charts.dart';
 import 'profile_avatar.dart';
 import 'svg_icon.dart';
+import 'peakform_logo.dart';
 
 const Size kShareCardSize = Size(340, 425);
 
@@ -44,15 +45,7 @@ class ShareCard extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Container(
-                    width: 8,
-                    height: 8,
-                    decoration: BoxDecoration(color: gc.accent, shape: BoxShape.circle),
-                  ),
-                  const SizedBox(width: 8),
-                  Text('GymMane',
-                      style: AppTheme.f(13,
-                          weight: FontWeight.w800, color: gc.text, letterSpacing: 0.4)),
+                  const PeakFormWordmark(height: 15, slogan: false),
                   const Spacer(),
                   Text(t.shortDateYear(DateTime.now()),
                       style: AppTheme.f(11, weight: FontWeight.w500, color: gc.textTertiary)),

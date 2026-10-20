@@ -1288,6 +1288,9 @@ class AppLocalizationsFa extends AppLocalizations {
   String get aboutGymmane => 'درباره Gymo';
 
   @override
+  String get basedOnGymMane => 'Based on GymMane by InlitX';
+
+  @override
   String get yourProfile => 'پروفایل تو';
 
   @override

@@ -434,7 +434,7 @@ class _PhotoVesselState extends State<PhotoVessel> with SingleTickerProviderStat
     }
 
     watch(widget.asset, (i) => _image = i);
-    watch(widget.asset.replaceFirst('.webp', '-mask.webp'), (i) => _mask = i);
+    watch(widget.asset.replaceFirst(RegExp(r'\.(webp|png)$'), '-mask.webp'), (i) => _mask = i);
     final texture = widget.texture;
     if (texture != null) watch(texture, (i) => _texture = i, fit: false);
   }
@@ -528,7 +528,7 @@ class VesselLook {
   );
 
   static VesselLook shake(Color liquid) => VesselLook(
-        asset: 'assets/img/vessel-shake.webp',
+        asset: 'assets/img/vessel-shake.png',
         top: 0.407,
         bottom: 0.975,
         curve: 0.066,

@@ -28,6 +28,7 @@ import 'exercises_screen.dart';
 import 'tool_detail_screen.dart';
 import 'share_sheet.dart';
 import 'sticker_screen.dart';
+import '../widgets/peakform_logo.dart';
 
 class SessionScreen extends StatelessWidget {
   const SessionScreen({super.key});
@@ -2092,12 +2093,12 @@ class SessionScreen extends StatelessWidget {
               ),
             ),
             Positioned(
-              right: -14,
-              top: -6,
-              bottom: -6,
-              child: Opacity(
-                opacity: 0.45,
-                child: Image.asset('assets/img/runner.png', fit: BoxFit.fitHeight),
+              right: 18,
+              top: 22,
+              bottom: 22,
+              child: const Opacity(
+                opacity: 0.4,
+                child: RotatedBox(quarterTurns: 3, child: PeakFormWordmark(slogan: false)),
               ),
             ),
             Padding(

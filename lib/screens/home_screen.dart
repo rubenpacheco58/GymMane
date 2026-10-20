@@ -17,6 +17,7 @@ import '../widgets/svg_icon.dart';
 import '../widgets/ui_kit.dart';
 import 'progress_screen.dart';
 import 'routines_screen.dart';
+import '../widgets/peakform_logo.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -281,12 +282,12 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             Positioned(
-              right: 4,
-              top: 12,
-              bottom: 76,
-              child: Opacity(
-                opacity: 0.6,
-                child: Image.asset('assets/img/runner.png', fit: BoxFit.fitHeight),
+              right: 16,
+              top: 54,
+              bottom: 84,
+              child: const Opacity(
+                opacity: 0.5,
+                child: RotatedBox(quarterTurns: 3, child: PeakFormWordmark(slogan: false)),
               ),
             ),
             Padding(

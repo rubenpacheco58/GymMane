@@ -18,6 +18,7 @@ import '../theme/app_colors.dart';
 import '../theme/app_theme.dart';
 import '../widgets/liquid_notch.dart';
 import '../widgets/ui_kit.dart';
+import '../widgets/peakform_logo.dart';
 
 Future<void> showStickerEditor(BuildContext context, LoggedSession session, {int prs = 0}) =>
     Navigator.of(context).push(PageRouteBuilder<void>(
@@ -108,13 +109,13 @@ class _StickerEditorState extends State<StickerEditor> {
 
   Future<void> _share() => _run((png) async {
         final dir = await getTemporaryDirectory();
-        final file = File('${dir.path}/gymmane-sticker.png');
+        final file = File('${dir.path}/peakform-sticker.png');
         await file.writeAsBytes(png, flush: true);
-        await SharePlus.instance.share(ShareParams(files: [XFile(file.path)], subject: 'GymMane'));
+        await SharePlus.instance.share(ShareParams(files: [XFile(file.path)], subject: 'PeakForm'));
       });
 
   Future<void> _save() => _run((png) async {
-        final ok = await saveImageToGallery(png, 'gymmane-${DateTime.now().millisecondsSinceEpoch}.png');
+        final ok = await saveImageToGallery(png, 'peakform-${DateTime.now().millisecondsSinceEpoch}.png');
         if (!ok) throw StateError('save');
         HapticFeedback.lightImpact();
         if (mounted) {
@@ -405,16 +406,8 @@ class _Sticker extends StatelessWidget {
     );
   }
 
-  Widget _mark({double size = 12}) => Row(mainAxisSize: MainAxisSize.min, children: [
-        Image.asset(
-          'assets/img/runner.png',
-          height: size + 5,
-          color: color.withValues(alpha: 0.9),
-          colorBlendMode: BlendMode.srcIn,
-        ),
-        const SizedBox(width: 5),
-        Text('GymMane', style: _s(size, FontWeight.w900, alpha: 0.9, spacing: 0.2)),
-      ]);
+  Widget _mark({double size = 12}) =>
+      PeakFormWordmark(height: size + 3, slogan: false, color: color.withValues(alpha: 0.9));
 
   Widget _kicker(String text) =>
       Text(text.toUpperCase(), style: _s(10.5, FontWeight.w800, alpha: 0.75, spacing: 2.2));

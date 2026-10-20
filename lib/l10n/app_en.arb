@@ -441,6 +441,7 @@
   "importDone": "{n, plural, one{Imported {n} session} other{Imported {n} sessions}}",
   "@importDone": { "placeholders": { "n": { "type": "int" } } },
   "aboutGymmane": "About PeakForm",
+  "basedOnGymMane": "Based on GymMane by InlitX",
   "yourProfile": "YOUR PROFILE",
   "autofills": "Autofills the calculators",
   "nameLabel": "NAME",
