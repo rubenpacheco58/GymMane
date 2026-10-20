@@ -30,7 +30,7 @@ const _sub = Color(0xFF5F574F);
 const _faint = Color(0xFF8A8179);
 const _line = Color(0xFFE9E4DE);
 const _soft = Color(0xFFF6F3EF);
-const _accent = Color(0xFF9E4E27);
+const _accent = Color(0xFFC93C00);
 const _paper = Color(0xFFFFFFFF);
 const _zebra = Color(0x80F6F3EF);
 
