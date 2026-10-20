@@ -1208,7 +1208,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get importBackup => '백업 가져오기';
 
   @override
-  String get importHint => 'GymMane에서 내보낸 .zip(또는 이전 .json) 백업을 선택하세요. 미디어를 포함한 현재 데이터가 대체됩니다.';
+  String get importHint => 'PeakForm에서 내보낸 .zip(또는 이전 .json) 백업을 선택하세요. 미디어를 포함한 현재 데이터가 대체됩니다.';
 
   @override
   String get import => '가져오기';
@@ -1255,7 +1255,7 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get aboutGymmane => 'GymMane 정보';
+  String get aboutGymmane => 'PeakForm 정보';
 
   @override
   String get yourProfile => '내 프로필';
@@ -1856,7 +1856,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get planNothing => '이 파일의 운동이 라이브러리와 일치하지 않습니다';
 
   @override
-  String get planFailed => '이 파일은 GymMane이 읽을 수 있는 루틴이 아닙니다';
+  String get planFailed => '이 파일은 PeakForm이 읽을 수 있는 루틴이 아닙니다';
 
   @override
   String get routineGroup => '그룹';
@@ -1996,7 +1996,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get aiIntro =>
-      'GymMane은 AI와 직접 통신하지 않습니다. 운동 목록을 내보내고 이미 사용하는 AI 도우미에 붙여넣은 뒤 응답을 다시 가져옵니다. 어떤 데이터도 자동으로 휴대전화 밖으로 나가지 않습니다.';
+      'PeakForm은 AI와 직접 통신하지 않습니다. 운동 목록을 내보내고 이미 사용하는 AI 도우미에 붙여넣은 뒤 응답을 다시 가져옵니다. 어떤 데이터도 자동으로 휴대전화 밖으로 나가지 않습니다.';
 
   @override
   String aiMissing(int n) {
@@ -2022,7 +2022,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get awardFirstStepName => '첫걸음';
 
   @override
-  String get awardFirstStepLine => 'GymMane에 오신 것을 환영합니다. 이건 선물입니다.';
+  String get awardFirstStepLine => 'PeakForm에 오신 것을 환영합니다. 이건 선물입니다.';
 
   @override
   String get awardFirstWorkoutName => '첫 운동';
@@ -2608,14 +2608,14 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String shareMessage(String name) {
-    return '$name — GymMane으로 파일을 열어 추가하세요.';
+    return '$name — PeakForm으로 파일을 열어 추가하세요.';
   }
 
   @override
   String get importRoutines => '루틴 가져오기';
 
   @override
-  String get importPasteHint => '여기에 루틴을 붙여 넣으세요: GymMane에서 공유한 루틴, AI 답변, JSON 또는 CSV.';
+  String get importPasteHint => '여기에 루틴을 붙여 넣으세요: PeakForm에서 공유한 루틴, AI 답변, JSON 또는 CSV.';
 
   @override
   String get pasteAction => '붙여 넣기';
@@ -2642,10 +2642,10 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get nothingToImport => 'GymMane이 가져올 수 있는 내용이 없어요';
+  String get nothingToImport => 'PeakForm이 가져올 수 있는 내용이 없어요';
 
   @override
-  String get aiStepCopy => '요청을 복사하세요. 내 운동 목록과 GymMane이 읽는 형식이 들어 있어요.';
+  String get aiStepCopy => '요청을 복사하세요. 내 운동 목록과 PeakForm이 읽는 형식이 들어 있어요.';
 
   @override
   String get aiStepAsk => '아무 AI에나 붙여 넣고 원하는 걸 말하세요: 주당 일수, 목표, 몇 주인지.';
@@ -2792,7 +2792,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get shareIntroTitle => '이 루틴 공유하기';
 
   @override
-  String get shareIntroBody => '연인, 친구, 가족에게 보내 보세요. GymMane으로 열리는 작은 파일이 가고, 세트와 무게까지 한 번에 추가돼요.';
+  String get shareIntroBody => '연인, 친구, 가족에게 보내 보세요. PeakForm으로 열리는 작은 파일이 가고, 세트와 무게까지 한 번에 추가돼요.';
 
   @override
   String get removedFromRoutine => '루틴에서 뺐어요';
@@ -2941,7 +2941,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get stepsInfoRead => '걸음 수만 읽어요. 다른 건 읽지 않고 Health Connect에 쓰지도 않아요.';
 
   @override
-  String get stepsInfoLocal => '걸음 수는 휴대폰에만 남아요. GymMane은 인터넷에 연결하지 않아요.';
+  String get stepsInfoLocal => '걸음 수는 휴대폰에만 남아요. PeakForm은 인터넷에 연결하지 않아요.';
 
   @override
   String get stepsInfoOff => '설정이나 Health Connect에서 언제든 끌 수 있어요.';
@@ -4302,7 +4302,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get nutritionAboutWhat =>
-      '식사, 물, 단백질, 보충제를 운동 바로 옆에 기록하는 간단한 방법입니다. GymMane은 무엇보다 헬스 앱입니다. 식단은 모든 것을 한곳에 모으기 위한 것이지, 다이어트 앱을 대신하려는 것이 아닙니다.';
+      '식사, 물, 단백질, 보충제를 운동 바로 옆에 기록하는 간단한 방법입니다. PeakForm은 무엇보다 헬스 앱입니다. 식단은 모든 것을 한곳에 모으기 위한 것이지, 다이어트 앱을 대신하려는 것이 아닙니다.';
 
   @override
   String get nutritionAboutScanTitle => '스캐너는 앞으로도 없음';
@@ -4316,7 +4316,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get nutritionAboutLocal =>
-      '앱에는 사진이 있는 음식이 500개 넘게 들어 있습니다. 직접 음식을 추가하고, 사진을 바꾸고, 값을 수정할 수 있습니다. GymMane의 다른 부분처럼 모든 것이 휴대폰에 남습니다.';
+      '앱에는 사진이 있는 음식이 500개 넘게 들어 있습니다. 직접 음식을 추가하고, 사진을 바꾸고, 값을 수정할 수 있습니다. PeakForm의 다른 부분처럼 모든 것이 휴대폰에 남습니다.';
 
   @override
   String get nutritionAboutBetaTitle => '아직 베타';
@@ -4382,7 +4382,7 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
-  String get notifSuppTap => 'Tick it off in GymMane once you\'ve taken it.';
+  String get notifSuppTap => 'Tick it off in PeakForm once you\'ve taken it.';
 
   @override
   String get suppNoneToday => 'Nothing to take today.';
